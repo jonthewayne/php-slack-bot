@@ -1,15 +1,15 @@
 {
-    "name": "jclg/php-slack-bot",
+    "name": "jonthewayne/php-slack-bot",
     "description": "Slack bot user written in PHP",
-    "homepage": "https://github.com/jclg/php-slack-bot",
+    "homepage": "https://github.com/jonthewayne/php-slack-bot/",
     "require": {
         "devristo/phpws": "dev-master",
         "react/http": "dev-master"
     },
     "authors": [
         {
-            "name": "jclg",
-            "email": "jeancharleslegoff@gmail.com"
+            "name": "jclg & jonthewayne",
+            "email": "jonthewayne@gmail.com"
         }
     ],
     "autoload": {
