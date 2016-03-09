@@ -48,7 +48,7 @@ class Bot {
         $this->authentificationToken = $authentificationToken;
     }
 
-    public function run() {
+    public function run($finish_function=null) {
         if (!isset($this->params['token'])) {
             throw new \Exception('A token must be set. Please see https://my.slack.com/services/new/bot');
         }
@@ -131,6 +131,17 @@ class Bot {
             $socket->listen($this->webserverPort);
         }
 
+        if ( isset($finish_function) ) {
+
+            $loop->addTimer(0.1, function () use ($finish_function) {
+                // run our custom function
+                $finish_function();
+
+                exit();
+            });
+            
+        }
+        
         $loop->run();
     }
 
