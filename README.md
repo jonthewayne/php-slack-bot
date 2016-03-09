@@ -11,7 +11,7 @@ Create a new composer.json file and add the following
     {
         "minimum-stability" : "dev",
         "require": {
-            "jclg/php-slack-bot": "dev-master"
+            "jonthewayne/php-slack-bot": "dev-master"
         }
     }
 
@@ -41,7 +41,11 @@ class MyCommand extends \PhpSlackBot\Command\BaseCommand {
 $bot = new Bot();
 $bot->setToken('TOKEN'); // Get your token here https://my.slack.com/services/new/bot
 $bot->loadCommand(new MyCommand());
-$bot->run();
+
+// pass the bot an optional custom function after which the bot exits
+$bot->run( function () {
+    echo "double rainbows!";
+});
 ```
 
 ## Example commands
